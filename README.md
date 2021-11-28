@@ -1,0 +1,2 @@
+# QuoteGenerator
+ Creates random quotes
