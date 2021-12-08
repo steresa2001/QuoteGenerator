@@ -40,8 +40,13 @@ const quotes = [
 
 /* getRandomQuote function creates a random number between 0 and length of quotes array 
 and returns that object from quotes array */
+let prevRandomNumber = 0;
 const getRandomQuote = () => {
   const randomNumber = Math.floor(Math.random() * quotes.length);
+  if (prevRandomNumber === randomNumber) {
+    return getRandomQuote();
+  }
+  prevRandomNumber = randomNumber;
   return quotes[randomNumber];
 };
 
